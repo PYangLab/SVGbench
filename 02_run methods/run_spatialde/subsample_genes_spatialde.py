@@ -20,16 +20,6 @@ inpath = '../../../SpatialData/SpatialBenchmark/DataUploadSubset/'
 
 count_filenames = glob.glob(inpath + '*/Spatial_count.csv')
 meta_filenames = glob.glob(inpath + '*/Locations.csv')
-
-matched_count_files = []
-for files in count_filenames:
-    if re.findall('41|21', files):
-        matched_count_files.append(files)
-
-matched_meta_files = []
-for files in meta_filenames:
-   if re.findall('41|21', files):
-        matched_meta_files.append(files)
         
 gp = [0.5]
 
@@ -41,8 +31,8 @@ for i in range(0,2):
     print(str(i) + '..................' + data_idx)
 
 # read data
-    counts = pd.read_csv(matched_count_files[i], sep =",", index_col = 0).T
-    spatial_loc = pd.read_csv(matched_meta_files[i], sep =",", index_col = 0)
+    counts = pd.read_csv(count_files[i], sep =",", index_col = 0).T
+    spatial_loc = pd.read_csv(meta_files[i], sep =",", index_col = 0)
 
 # filter
     dup = (counts.index).duplicated()

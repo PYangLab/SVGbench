@@ -10,74 +10,48 @@ library(here)
 
 load(file=here("data", "gene_subsampling_stats_SVG_lists.RData"))
 
-methods = c("giotto_kmeans", "giotto_rank", "meringue", "moransi", "nnsvg", "somde", "spark", "spatialde")
-test_datasets = c("Dataset21", "Dataset41")
-
-pal = paletteer::palettes_d$ggthemes$Jewel_Bright[-3]
-names(pal) = methods 
-
-each_dataset = list()
-count = 0
-for (m in methods) {
-  count = count + 1
+cor.list = list()
+for (i in 1:length(subsampled_genes)) {
   
-  # subset for method
-  dat.sub = sub_stats[[grep(m, names(sub_stats))]]
-  dat.nonsub = nonsub_stats[[m]]
+  cat(i, "............\n")
+  sub = subsampled_genes[[i]]
+  full = original_genes[[i]]
   
-  # for each dataset
-  each_dataset[[count]] <- lapply(1:length(test_datasets), function(t) {
-    sub = dat.sub[grep(test_datasets[t], names(dat.sub))]
-    nonsub = dat.nonsub[[test_datasets[t]]]
+  cor.list[[i]] = sapply(1:length(all.names), function(j) {
     
-    cor.df = lapply(1:length(sub), function(x) {
-        g = names(sub[[x]])
-        
-        
-        # plot scatterplots
-      df = data.frame(nonsub = rank(nonsub[g]), sub = rank(sub[[x]][g]))
+    if (all.names[j] %in% names(sub)) {
       
-      ggplot(df, aes(x=nonsub, y=sub)) +
-        geom_point_rast(color = pal[m], alpha=0.3) +
-        theme_base() +
-        theme(aspect.ratio = 1)
+      d = all.names[j]
+      d2 = paste(unlist(strsplit(d, "_"))[1], "1", sep="_")
+      cat(j, "............\n")
+      g = names(sub[[d]])
+      cor = cor(sub[[d]][g], full[[d2]][g], method="spearman", use="complete.obs")
       
-      fn = here("plots", "gene_statistics_gene_subsampling", glue::glue(paste(m, names(sub)[[x]], sep="_"), ".pdf"))
-      ggsave(filename=fn)
-      
-      
-      # calculate correlation
-      cor = cor(sub[[x]][g], nonsub[g], method="spearman")
-    })
-    
-    names(cor.df) = names(sub)
-    cor.df = reshape2::melt(cor.df)
-    cor.df$method = m
-    return(cor.df)
+    } else {
+      cor = NA
+    }
     
   })
   
-  names(each_dataset[[count]]) = test_datasets
-  each_dataset[[count]] = do.call(rbind, each_dataset[[count]])
-  
 }
 
-names(each_dataset) = methods
-plot_df = do.call(rbind, each_dataset)
+mat = do.call(rbind, cor.list)
+rownames(mat) = names(subsampled_genes)
+colnames(mat) = names(subsampled_genes$gkm)
+
+df = reshape2::melt(mat)
+df = df[!is.na(df$value), ]
 
 # plot results
 pal = paletteer::palettes_d$ggthemes$Jewel_Bright[-3]
-names(pal) = methods
+names(pal) = c("giotto_kmeans","giotto_rank", "seurat_moransi", "meringue", "nnSVG", "somde", "sparkx", "spatialde")
 
-plot_df$dataset = sapply(strsplit(plot_df$L1, "_"), "[[", 1)
+df$Var1 = factor(df$Var1, levels = c("giotto_kmeans","giotto_rank", "seurat_moransi", "meringue", "nnSVG", "somde", "sparkx", "spatialde"))
 
-ggplot(plot_df, aes(x=method, y=value, fill=method)) +
-geom_bar(position="dodge", stat="identity") +
-labs(x=NULL, y="spearman's correlation", fill=NULL, colour=NULL) +
-scale_fill_manual(values=pal) +
-facet_wrap(vars(dataset), scales="free_x", ncol=3) +
-theme_bw() +
-theme(axis.text.x = element_text(angle=45, hjust=1, vjust=1), aspect.ratio = 1)
+ggplot(df, aes(x=reorder(Var1, value), y=value, fill=Var1)) +
+  geom_boxplot() +
+  scale_fill_manual(values=pal) +
+  theme_bw()
 
-fn = here("plots", "gene_sampling_correlation.pdf")
-ggsave(filename=fn, width=10, height=10)
+fn = here("plots", "gene_sampling_correlation_v2.pdf")
+ggsave(filename=fn, width=6, height=4)

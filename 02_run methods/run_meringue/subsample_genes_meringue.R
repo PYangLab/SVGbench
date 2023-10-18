@@ -18,7 +18,6 @@ path = "../../../SpatialData/SpatialBenchmark/DataUploadSubset/"
 out_path1 = "../SVG/subsample_genes/meringue"
 
 f = list.dirs(path, recursive=FALSE)
-f = f[grep("Dataset21|Dataset41", f)]
 
 gp = 0.5
 

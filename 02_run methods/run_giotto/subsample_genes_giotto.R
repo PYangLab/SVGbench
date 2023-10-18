@@ -19,7 +19,6 @@ out_path1 = "../SVG/subsample_genes/giotto/"
 
 set.seed(1)
 f = list.dirs(path, recursive=FALSE)
-f = f[grep("Dataset21|Dataset41", f)]
 
 gp = 0.5
 
