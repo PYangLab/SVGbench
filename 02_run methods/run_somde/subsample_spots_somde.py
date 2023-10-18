@@ -1,6 +1,6 @@
 ###################################
 # Script to subsample spots and call SVGs using SOMDE
-# Carissa Chen, updated Jul 2023
+# Carissa Chen, updated Oct 2023
 ###################################
 
 import pandas as pd

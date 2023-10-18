@@ -1,6 +1,6 @@
 ###################################
 # Plot rankings of gene statistics after cell sampling
-# Carissa Chen, updated Jul 2023
+# Carissa Chen, updated Oct 2023
 ###################################
 
 # load libraries

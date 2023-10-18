@@ -1,6 +1,6 @@
 ###################################
 # Script to subsample genes and call SVGs using SPARK-X
-# Carissa Chen, updated Jul 2023
+# Carissa Chen, updated Oct 2023
 ###################################
 
 # load libraries

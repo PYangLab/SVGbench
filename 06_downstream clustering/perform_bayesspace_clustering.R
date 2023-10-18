@@ -84,7 +84,7 @@ for (i in 1:10) {
       
     }, mc.cores = length(topList)))
     
-    write.csv(df_top, file = here("data/bayesspace/stats/", paste0("bayesspace_", method, "_rep", i, ".csv"))
+    write.csv(df_top, file = here("data/bayesspace/stats/", paste0("bayesspace_", method, "_rep", i, ".csv")))
     
   })
   

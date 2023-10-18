@@ -1,6 +1,6 @@
 ###################################
 # Script to generate gene statistic dependency plots
-# Carissa Chen, updated Jul 2023
+# Carissa Chen, updated Oct 2023
 ###################################
 
 # load libraries

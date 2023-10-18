@@ -1,6 +1,6 @@
 ###################################
 # Script to subsample genes and call SVGs using SEURAT Moran's I
-# Carissa Chen, updated Jul 2023
+# Carissa Chen, updated Oct 2023
 ###################################
 
 # load libraries

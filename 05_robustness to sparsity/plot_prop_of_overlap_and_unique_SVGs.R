@@ -1,6 +1,6 @@
 ###################################
 # Plot proportion of overlapping sig SVGs after spot subsampling
-# Carissa Chen, updated Jul 2023
+# Carissa Chen, updated Oct 2023
 ###################################
 
 # load libraries
