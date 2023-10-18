@@ -5,6 +5,7 @@
 
 # load libraries
 library(tidyverse)
+library(glue)
 
 f = list.files("../../../SpatialData/Slideseq/")
 outdir = "../../../SpatialData/Slideseq/"

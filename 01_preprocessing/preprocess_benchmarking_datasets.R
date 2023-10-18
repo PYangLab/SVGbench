@@ -5,6 +5,7 @@
 
 # load libraries
 library(tidyverse)
+library(glue)
 
 path = "../../../SpatialData/SpatialBenchmark/DataUpload/"
 outdir = "../../../SpatialData/SpatialBenchmark/DataUploadSubset/"
@@ -13,7 +14,6 @@ f <- list.files(path)
 geneCellStat <- matrix(NA, nrow = length(f), ncol=4)
 
 # run for each raw file
-
 for(i in 1:length(f)) {
   
   print(i)

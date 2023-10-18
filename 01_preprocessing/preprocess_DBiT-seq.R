@@ -3,6 +3,10 @@
 # Carissa Chen, updated Jul 2023
 ###################################
 
+# load libraries
+library(tidyverse)
+library(glue)
+
 f = list.files("../../../SpatialData/DBiT-seq/", pattern="*.tsv", recursive = TRUE)
 outdir = "../../../SpatialData/DBiT-seq/"
 
