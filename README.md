@@ -8,4 +8,4 @@ This repo hosts the source code and scripts for evaluating spatially variable ge
 All scripts containing the pre-processing, functions to run all methods in the manuscript and plots are provided.
 
 Reference:
-Carissa Chen, Hani Jieun Kim, and Pengyi Yang (2023) Evaluating spatially variable gene detection methods for spatial transcriptomics data, [preprint](https://www.biorxiv.org/content/10.1101/2022.11.23.517747v2).
+Carissa Chen^+^, Hani Jieun Kim^+*^, and Pengyi Yang^*^ (2023) Evaluating spatially variable gene detection methods for spatial transcriptomics data, **Genome Biology**, 25, 18 [full text](https://doi.org/10.1186/s13059-023-03145-y).
