@@ -1,7 +1,8 @@
+[![DOI](https://zenodo.org/badge/672695737.svg)](https://zenodo.org/doi/10.5281/zenodo.10295502)
+
 # SVGbench
 
-Evaluating spatially variable gene detection methods for spatial transcriptomics data.
-This repo hosts the source code and scripts for evaluating spatially variable gene detection methods for spatial transcriptomics data
+This repo hosts the source code and scripts for evaluating spatially variable gene detection methods for spatial transcriptomics data.
 
 ![Fig1_evaluation workflow_v4](https://github.com/PYangLab/SVGbench/assets/10148940/9e39d918-5a7c-4b3f-8068-24cee617c533)
 
