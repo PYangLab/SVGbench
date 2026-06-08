@@ -14,7 +14,7 @@ library(here)
 source(here("02_run methods", "functions", "call_variable_genes.R"))
 
 path = "../../../SpatialData/Simulations/"
-out_path1 = "../SVG/simulation/moransi/"
+out_path = "../SVG/simulation/moransi/"
 
 f = list.dirs(path, recursive=FALSE)
 

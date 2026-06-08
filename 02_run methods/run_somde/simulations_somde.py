@@ -92,5 +92,5 @@ for i in range(0,10):
 
     # write csv of results
 
-    outpath1 = 'SVG/simulations/somde/' + data_idx + '_svg_somde.csv'
+    outpath1 = outpath + data_idx + '_svg_somde.csv'
     result.to_csv(outpath1)

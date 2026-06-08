@@ -57,4 +57,4 @@ for i in range(0,2):
 # write csv of results
 
     outpath = '../SVG/subsample_genes/spatialde/' + data_idx + '_svg_spatialde_subset_genes_' + str(gp) + '.csv'
-    result.to_csv(outpath1)
+    result.to_csv(outpath)

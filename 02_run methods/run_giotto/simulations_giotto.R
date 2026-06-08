@@ -48,8 +48,8 @@ mclapply(1:length(f), function(i) {
   svg_giotto_kmeans = callSVG.Giotto(data_giotto, svg_method = "kmeans", runHVG = TRUE, n_cores=32)
   svg_giotto_rank = callSVG.Giotto(data_giotto, svg_method = "rank", runHVG = TRUE, n_cores=32)
   
-  write.table(svg_giotto_kmeans, file=glue(out_path2, data_idx, "_svg_giotto_kmeans.tsv"), sep="\t")
-  write.table(svg_giotto_rank, file=glue(out_path2, data_idx, "_svg_giotto_rank.tsv"), sep="\t")
+  write.table(svg_giotto_kmeans, file=glue(out_path, data_idx, "_svg_giotto_kmeans.tsv"), sep="\t")
+  write.table(svg_giotto_rank, file=glue(out_path, data_idx, "_svg_giotto_rank.tsv"), sep="\t")
   rm(countMat, data_giotto)
   
 }, mc.cores = n_cores, mc.set.seed = TRUE)

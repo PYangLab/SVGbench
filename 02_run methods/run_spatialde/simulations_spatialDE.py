@@ -16,7 +16,7 @@ import random
 import os
 
 # create vector of filenames
-inpath = '../../../SpatialData/Simulations'
+inpath = '../../../SpatialData/Simulations/'
 outpath = '../SVG/simulations/call_variable_genes/spatialde/'
 
 count_filenames = glob.glob(inpath + '*/Spatial_count.csv')

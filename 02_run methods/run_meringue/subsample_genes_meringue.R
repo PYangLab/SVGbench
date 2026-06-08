@@ -15,7 +15,7 @@ library(here)
 source(here("02_run methods", "functions", "call_variable_genes.R"))
 
 path = "../../../SpatialData/SpatialBenchmark/DataUploadSubset/"
-out_path1 = "../SVG/subsample_genes/meringue"
+out_path1 = "../SVG/subsample_genes/meringue/"
 
 f = list.dirs(path, recursive=FALSE)
 

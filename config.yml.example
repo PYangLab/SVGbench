@@ -1,0 +1,25 @@
+# Copy this file to config.yml and adapt paths for your machine.
+# Existing scripts were written around the original relative layout; this file
+# documents the expected directories and can be used to create symlinks or to
+# update scripts for local execution.
+
+data:
+  raw_benchmark: "../../../SpatialData/SpatialBenchmark/DataUpload/"
+  processed_benchmark: "../../../SpatialData/SpatialBenchmark/DataUploadSubset/"
+  simulations: "../../../SpatialData/Simulations/"
+  mosta: "../../../SpatialData/MOSTA/"
+  slideseq_v1: "../../../SpatialData/SlideseqV1/"
+  slideseq_v2: "../../../SpatialData/SlideseqV2/"
+  dbit_seq: "../../../SpatialData/DBiT-seq/"
+  sm_omics: "../../../SpatialData/smOmics/"
+
+outputs:
+  svg_results: "../SVG/"
+  plots: "plots/"
+  derived_data: "data/"
+  additional_files: "additional_files/"
+
+resources:
+  benchmark_data: "https://drive.google.com/drive/folders/1ECInc9LNjTjK-8Oa8CR8eyvnc4pDepXl?usp=sharing"
+  paper: "https://doi.org/10.1186/s13059-023-03145-y"
+  zenodo: "https://zenodo.org/doi/10.5281/zenodo.10295502"

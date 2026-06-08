@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use SVGbench, please cite the Genome Biology article."
+title: "SVGbench: Evaluating spatially variable gene detection methods for spatial transcriptomics data"
+repository-code: "https://github.com/PYangLab/SVGbench"
+license: "CC-BY-4.0"
+authors:
+  - family-names: Chen
+    given-names: Carissa
+  - family-names: Kim
+    given-names: Hani Jieun
+  - family-names: Yang
+    given-names: Pengyi
+preferred-citation:
+  type: article
+  title: "Evaluating spatially variable gene detection methods for spatial transcriptomics data"
+  authors:
+    - family-names: Chen
+      given-names: Carissa
+    - family-names: Kim
+      given-names: Hani Jieun
+    - family-names: Yang
+      given-names: Pengyi
+  journal: "Genome Biology"
+  volume: 25
+  issue: 18
+  year: 2024
+  doi: "10.1186/s13059-023-03145-y"
+  url: "https://doi.org/10.1186/s13059-023-03145-y"

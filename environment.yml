@@ -1,0 +1,23 @@
+name: svgbench
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.9
+  - pip
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+  - scikit-learn
+  - anndata
+  - scanpy
+  - opencv
+  - pytorch
+  - pip:
+      - SpatialDE
+      - NaiveDE
+      - somde
+      - SpaGCN
+      - sinfonia

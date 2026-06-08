@@ -17,6 +17,7 @@ import os
 
 # create vector of filenames
 inpath = '../../../SpatialData/SpatialBenchmark/DataUploadSubset/'
+outpath = '../SVG/spatialde/'
 
 count_filenames = glob.glob(inpath + '*/Spatial_count.csv')
 meta_filenames = glob.glob(inpath + '*/Locations.csv')
@@ -59,7 +60,7 @@ for i in range(0,22):
     peak = peak/1024.0/1024.0
 
 # write csv of computational times
-    csv_path = str(outpath1 + data_idx + '_time_spatialde.csv')
+    csv_path = str(outpath + data_idx + '_time_spatialde.csv')
 
     with open(csv_path, 'w+') as output:
         columns = ['time', 'n_cell', 'n_gene', 'dataset', 'Peak_RAM_Used_MiB', 'method']
@@ -76,5 +77,4 @@ for i in range(0,22):
     
 # write csv of results
 
-    outpath = '../SVG/spatialde/' + data_idx + '_svg_spatialde.csv'
-    result.to_csv(outpath)
+    result.to_csv(outpath + data_idx + '_svg_spatialde.csv')

@@ -60,7 +60,7 @@ mclapply(1:length(f), function(i) {
     method = "seurat_moransi"
   )
   write.table(computation, file=glue(out_path1, data_idx, "_time_seurat_moransi.tsv"), sep="\t")
-  write.table(seu.moransi, file=glue(out_path2, data_idx, "_svg_seurat_moransi.tsv"), sep="\t")
+  write.table(seu.moransi, file=glue(out_path1, data_idx, "_svg_seurat_moransi.tsv"), sep="\t")
 
   rm(countMat, data_seu)
 

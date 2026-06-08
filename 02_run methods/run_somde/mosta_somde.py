@@ -15,7 +15,7 @@ import glob
 import re
 import random
 
-inpath = '../../../SpatialData/MOSTA/""
+inpath = '../../../SpatialData/MOSTA/'
 outpath = '../SVG/MOSTA/somde/'
 datasets = str(inpath + 'E9.5.MOSTA.h5ad')
 

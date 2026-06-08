@@ -17,7 +17,7 @@ path = "../../../SpatialData/MOSTA/"
 
 f=list.files(path, pattern="^E9.5")
 
-out_path1 = "../SVG/MOSTA/moransi/"
+out_path = "../SVG/MOSTA/moransi/"
 
 #### RUN SEURAT Moran's I
 
